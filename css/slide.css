@@ -568,6 +568,75 @@ section.sbrk{
 .s18-body{
   position:relative;
   top:var(--s18-body-y);
+  justify-content:center;
+}
+
+/* S18 three-card layout */
+.s18-cards-container{
+  display:flex;
+  gap:40px;
+  align-items:stretch;
+  width:100%;
+}
+.s18-card{
+  flex:1 1 0;
+  height:620px;
+  box-sizing:border-box;
+  display:flex;
+  flex-direction:column;
+  gap:18px;
+  padding:30px 32px 32px;
+  border-top:8px solid var(--n);
+}
+.s18-card:nth-child(2){
+  border-top-color:var(--b);
+}
+.s18-card:nth-child(3){
+  border-top-color:var(--bm);
+}
+.s18-card-title{
+  display:flex;
+  align-items:center;
+  gap:16px;
+  min-height:92px;
+  font-size:36px;
+  line-height:1.22;
+  font-weight:700;
+  color:var(--n);
+}
+.s18-card-title .nbdg{
+  width:52px;
+  height:52px;
+  font-size:26px;
+  flex:0 0 auto;
+}
+.s18-card:nth-child(1) .s18-card-title .nbdg{
+  background:var(--n);
+}
+.s18-card:nth-child(2) .s18-card-title .nbdg{
+  background:var(--b);
+}
+.s18-card:nth-child(3) .s18-card-title .nbdg{
+  background:var(--bm);
+}
+.s18-card-desc{
+  min-height:68px;
+  font-size:27px;
+  line-height:1.35;
+  color:var(--tm);
+}
+.s18-card-photo{
+  height:340px;
+  margin-top:auto;
+  border-radius:12px;
+  overflow:hidden;
+  position:relative;
+}
+.s18-card-photo .photo-cover{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
 }
 
 /* S18 flow explanation photo */
@@ -575,6 +644,9 @@ section.sbrk{
 
 /* S18 handover photo */
 .photo-s18-handover .photo-cover{object-position:center center}
+
+/* S18 waiting customer photo */
+.photo-s18-waiting .photo-cover{object-position:center center}
 
 /* S19 summary photo */
 .photo-s19-summary .photo-cover{
