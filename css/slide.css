@@ -1,5 +1,5 @@
-/* Base / Variables
-   Main color tokens. Edit these values first when changing the slide theme. */
+/* ===== Base / Variables ===== */
+/* Main color tokens. Edit these values first when changing the slide theme. */
 :root{
   --color-green-main:#005c28;   /* Main dark green: headers, primary text accents */
   --color-green-sub:#1a7a42;    /* Sub green: secondary accents */
@@ -64,17 +64,17 @@
   --s14-cards-row-y: -30px;          /* S14: 左右ボックス行全体の上下位置 */
   --s14-bottom-box-y: -15px;         /* S14: 下段強調ボックスの上下位置 */
 
+  --s16-in-nbdg-y: 10px;      /* S16: バッジ（丸数字）の上下位置 */
+  --s16-in-title-y: 25px;     /* S16: タイトルテキストの上下位置 */
+  --s16-in-desc-y: 50px;      /* S16: 説明テキストの上下位置 */
+  --s16-card-height: 500px;  /* S16: カードボックスの縦幅 */
+  --s16-cards-y: -60px;      /* S16: カード列全体の上下位置 */
   --s17-top-text-y: -80px;           /* S17: 上部導入テキストの上下位置 */
   --s17-cards-height: 530px;         /* S17: 3つのカードボックス自体の縦幅（高さ） */
   --s17-cards-row-y: -60px;          /* S17: 3つのボックス列（行全体）の上下位置 */
   --s17-element-title-y: 0px;        /* S17: 各カード内 タイトル行の上下位置 */
   --s17-element-desc-y: 0px;         /* S17: 各カード内 従来説明の上下位置 */
   --s17-element-result-y: 15px;       /* S17: 各カード内 改善後ブロックの上下位置 */
-  --s16-in-nbdg-y: 10px;      /* S16: バッジ（丸数字）の上下位置 */
-  --s16-in-title-y: 25px;     /* S16: タイトルテキストの上下位置 */
-  --s16-in-desc-y: 50px;      /* S16: 説明テキストの上下位置 */
-  --s16-card-height: 500px;  /* S16: カードボックスの縦幅 */
-  --s16-cards-y: -60px;      /* S16: カード列全体の上下位置 */
 
   --s18-body-y:-30px;                /* S18: コンテンツ全体の上下位置 */
   --s18-card-height:600px;           /* S18: 3カードの高さ */
@@ -97,9 +97,6 @@
   --s20-element-desc-y: 0px;           /* S20: 各カード内 従来説明の上下位置 */
   --s20-element-result-y: 30px;         /* S20: 各カード内 改善後ブロックの上下位置 */
 
-  --s21-photo-width:1100px;         /* S21: 未使用（フルブリード化により無効） */
-  --s21-photo-height:780px;         /* S21: 未使用（フルブリード化により無効） */
-  --s21-photo-y:10px;               /* S21: 未使用（フルブリード化により無効） */
   --s21-photo-scale:1.0;            /* S21: 画像の拡大率（トリミング用） */
   --s21-photo-position:center center; /* S21: 画像の表示位置調整 */
   --s21-side-band-width: 240px;    /* S21: 左右白帯の幅（4:3比率 = 1440px中央配置） */
@@ -124,7 +121,7 @@
   --dv:var(--color-divider);
 }
 
-/* Slide Base */
+/* ===== Slide Base ===== */
 section{
   width:1920px;
   height:1080px;
@@ -138,8 +135,8 @@ section{
   flex-direction:column;
 }
 
-/* Header
-   .sh = slide header bar, .stag = small subtitle inside the header. */
+/* ===== Header ===== */
+/* .sh = slide header bar, .stag = small subtitle inside the header. */
 .sh{
   background:var(--color-green-main);
   height:148px;
@@ -164,8 +161,8 @@ section{
   font-weight:400;
 }
 
-/* Body Layout
-   .sb = slide body, .pn = page number, .col/.f1/.f2 = simple flex helpers. */
+/* ===== Body Layout ===== */
+/* .sb = slide body, .pn = page number, .col/.f1/.f2 = simple flex helpers. */
 .sb{
   flex:1;
   padding:56px 100px;
@@ -196,8 +193,8 @@ section.sbrk{
 .f1{flex:1}
 .f2{flex:2}
 
-/* Cards
-   .ip = image placeholder, .cd = light card, .cdn = dark card, .cdb = bordered card. */
+/* ===== Cards ===== */
+/* .ip = image placeholder, .cd = light card, .cdn = dark card, .cdb = bordered card. */
 .ip{
   background:repeating-linear-gradient(-45deg,#cde5d7 0,#cde5d7 8px,#e4f2eb 8px,#e4f2eb 16px);
   border-radius:10px;
@@ -242,7 +239,7 @@ section.sbrk{
   flex-shrink:0;
 }
 
-/* Lists */
+/* ===== Lists ===== */
 .ul{
   list-style:none;
   padding:0;
@@ -268,8 +265,8 @@ section.sbrk{
   margin-top:13px;
 }
 
-/* Utility Classes
-   Short class names are retained because index.html already uses them. */
+/* ===== Utility Classes ===== */
+/* Short class names are retained because index.html already uses them. */
 .cn{color:var(--color-green-main)}
 .cb{color:var(--color-green-sub)}
 .cw{color:#fff}
@@ -279,9 +276,27 @@ section.sbrk{
 .fw7{font-weight:700}
 .fw9{font-weight:900}
 
-/* Slide-Specific Adjustments */
+/* ===== Slide-Specific Adjustments ===== */
 
-/* S2: Left/right group vertical position */
+/* ===== Photo Frames ===== */
+/* Keep images as <img>. Adjust object-position here for photo cropping. */
+.photo-frame{
+  position:relative;
+  overflow:hidden;
+}
+.photo-cover{
+  object-fit:cover;
+}
+
+/* ===== S1 ===== */
+.photo-s01-title .photo-cover{
+  object-position:center center;
+  object-position:38% center;
+  transform:scale(1.3);
+  transform-origin:center center;
+}
+
+/* ===== S2 ===== */
 .s02-left-content{
   position:relative;
   top:var(--s02-left-content-y);
@@ -290,8 +305,17 @@ section.sbrk{
   position:relative;
   top:var(--s02-right-photo-y);
 }
+.s02-quote{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.s02-quote-line{display:block}
+.s02-quote-line-left{text-align:left}
+.s02-quote-line-right{text-align:right}
+.photo-s02-intro .photo-cover{object-position:center top}
 
-/* S3: Cards row and bottom text position */
+/* ===== S3 ===== */
 .s03-cards-row{
   position:relative;
   top:var(--s03-cards-row-y);
@@ -301,19 +325,6 @@ section.sbrk{
   bottom:calc(72px - var(--s03-bottom-text-y));
   left:0;right:0;
 }
-
-/* S2: Quote text alignment */
-.s02-quote{
-  display:flex;
-  flex-direction:column;
-  gap:8px;
-}
-.s02-quote-line{display:block}
-.s02-quote-line-left{text-align:left}
-.s02-quote-line-right{text-align:right}
-
-/* S3: Basic stance box text position
-   Change --s03-box-text-y to move both box text groups up/down together. */
 .s03-box-text{
   display:flex;
   flex-direction:column;
@@ -323,7 +334,7 @@ section.sbrk{
 .s03-left-box-text{transform:translateY(var(--s03-left-box-text-y))}
 .s03-right-box-text{transform:translateY(var(--s03-right-box-text-y))}
 
-/* S4: Store location marker */
+/* ===== S4 ===== */
 .s04-store-marker{
   position:absolute;
   left:var(--s04-store-marker-x);
@@ -360,18 +371,19 @@ section.sbrk{
   pointer-events:none;
   white-space:nowrap;
 }
-
-/* S4: Move the left-side content group up/down together. */
 .s04-left-content{
   justify-content:center;
   gap:40px;
   position:relative;
   top:var(--s04-left-content-y);
 }
+.photo-s04-store .photo-cover{
+  object-position:var(--s04-photo-position);
+  transform:scale(var(--s04-photo-scale));
+  transform-origin:center center;
+}
 
-/* S5: Purpose composition card size and vertical alignment
-   Change these variables to adjust all three cards together:
-   --s05-purpose-card-height, --s05-purpose-card-padding-y, --s05-purpose-body-y. */
+/* ===== S5 ===== */
 .s05-purpose-body{
   align-items:center;
   justify-content:center;
@@ -391,10 +403,7 @@ section.sbrk{
   gap:14px;
 }
 
-/* S6: Chart layout vertical adjustments
-   Use top instead of transform to avoid conflict with entrance animation.
-   Change these variables to adjust each area:
-   --s06-body-y, --s06-legend-y, --s06-chart-y, --s06-note-y. */
+/* ===== S6 ===== */
 .s06-body{
   position:relative;
   top:var(--s06-body-y);
@@ -408,31 +417,27 @@ section.sbrk{
 .s06-chart{top:var(--s06-chart-y)}
 .s06-note{top:var(--s06-note-y)}
 
-/* S7: Shinkansen arrival step card size and inner top spacing
-   Change these variables to adjust all three cards together:
-   --s07-step-card-height and --s07-step-card-padding-top. */
+/* ===== S7 ===== */
 .s07-step-row{transform:translateY(var(--s07-step-row-y))}
 .s07-step-card{
   height:var(--s07-step-card-height) !important;
   padding-top:var(--s07-step-card-padding-top) !important;
 }
-
-/* S7: Bottom note vertical position */
 .s07-note{transform:translateY(var(--s07-note-y))}
 
-/* S9: Main content vertical position */
+/* ===== S9 ===== */
 .s09-main-content{
   position:relative;
   top:var(--s09-content-y);
 }
 
-/* S10: Card group vertical position */
+/* ===== S10 ===== */
 .s10-cards-container{
   position:relative;
   top:var(--s10-content-y);
 }
 
-/* S11: Card height and vertical positioning */
+/* ===== S11 ===== */
 .s11-cards-container{
   position:relative;
   top:var(--s11-cards-y);
@@ -457,35 +462,7 @@ section.sbrk{
   top:var(--s11-text-y);
 }
 
-/* Photo Frames
-   Keep images as <img>. Adjust object-position here for photo cropping. */
-.photo-frame{
-  position:relative;
-  overflow:hidden;
-}
-.photo-cover{
-  object-fit:cover;
-}
-
-/* S1 title photo */
-.photo-s01-title .photo-cover{
-  object-position:center center;
-  object-position:38% center;
-  transform:scale(1.3);
-  transform-origin:center center;
-}
-
-/* S2 intro photo */
-.photo-s02-intro .photo-cover{object-position:center top}
-
-/* S4 store/location photo */
-.photo-s04-store .photo-cover{
-  object-position:var(--s04-photo-position);
-  transform:scale(var(--s04-photo-scale));
-  transform-origin:center center;
-}
-
-/* S13 right content */
+/* ===== S13 ===== */
 .s13-right-content{
   position:relative;
   top:var(--s13-right-content-y);
@@ -494,7 +471,7 @@ section.sbrk{
   gap:var(--s13-box-gap);
 }
 
-/* S14 element position controls */
+/* ===== S14 ===== */
 .s14-top-text{
   position:relative;
   top:var(--s14-top-text-y);
@@ -508,27 +485,39 @@ section.sbrk{
   top:var(--s14-bottom-box-y);
 }
 
-/* S17 top intro text */
-.s17-top-text{
-  position:relative;
-  top:var(--s17-top-text-y);
-}
-
-/* S17 three-box cards row */
-.s17-cards-container{
-  position:relative;
-  top:var(--s17-cards-row-y);
-}
-.s17-cards-container > .cd {
-  height: var(--s17-cards-height);
-  box-sizing: border-box;
-}
+/* ===== S16 ===== */
 .s16-cards-container {
   position: relative;
   top: var(--s16-cards-y);
 }
 .s16-cards-container > .cd {
   height: var(--s16-card-height);
+  box-sizing: border-box;
+}
+.s16-in-nbdg {
+  position: relative;
+  top: var(--s16-in-nbdg-y);
+}
+.s16-in-title {
+  position: relative;
+  top: var(--s16-in-title-y);
+}
+.s16-in-desc {
+  position: relative;
+  top: var(--s16-in-desc-y);
+}
+
+/* ===== S17 ===== */
+.s17-top-text{
+  position:relative;
+  top:var(--s17-top-text-y);
+}
+.s17-cards-container{
+  position:relative;
+  top:var(--s17-cards-row-y);
+}
+.s17-cards-container > .cd {
+  height: var(--s17-cards-height);
   box-sizing: border-box;
 }
 .s17-inner-title {
@@ -553,28 +542,12 @@ section.sbrk{
   gap: 20px;
 }
 
-/* S16 card inner element position controls */
-.s16-in-nbdg {
-  position: relative;
-  top: var(--s16-in-nbdg-y);
-}
-.s16-in-title {
-  position: relative;
-  top: var(--s16-in-title-y);
-}
-.s16-in-desc {
-  position: relative;
-  top: var(--s16-in-desc-y);
-}
-
-/* S18 body content group */
+/* ===== S18 ===== */
 .s18-body{
   position:relative;
   top:var(--s18-body-y);
   justify-content:center;
 }
-
-/* S18 three-card layout */
 .s18-cards-container{
   display:flex;
   gap:40px;
@@ -643,42 +616,30 @@ section.sbrk{
   display:block;
   object-fit:cover;
 }
-
-/* S18 flow explanation photo */
 .photo-s18-flow .photo-cover{object-position:center center}
-
-/* S18 handover photo */
 .photo-s18-handover .photo-cover{object-position:center center}
-
-/* S18 waiting customer photo */
 .photo-s18-waiting .photo-cover{object-position:center center}
 
-/* S19 summary photo */
+/* ===== S19 ===== */
 .photo-s19-summary .photo-cover{
   object-position:var(--s19-photo-position);
   transform:scale(var(--s19-photo-scale));
   transform-origin:center center;
 }
-
-/* S19 left content group */
 .s19-left-content{
   position:relative;
   top:var(--s19-left-content-y);
 }
-
-/* S19 bottom emphasis box */
 .s19-bottom-box{
   position:relative;
   top:var(--s19-bottom-box-y);
 }
 
-/* S20 top intro text */
+/* ===== S20 ===== */
 .s20-top-text{
   position:relative;
   top:var(--s20-top-text-y);
 }
-
-/* S20 three-box cards row */
 .s20-cards-container{
   position:relative;
   top:var(--s20-cards-row-y);
@@ -687,8 +648,6 @@ section.sbrk{
   height: var(--s20-cards-height);
   box-sizing: border-box;
 }
-
-/* S20 inner card elements — variable-controlled vertical alignment */
 .s20-inner-title {
   position: relative;
   top: var(--s20-element-title-y);
@@ -707,7 +666,7 @@ section.sbrk{
   gap: 20px;
 }
 
-/* S21 staff photo (img / video 共通) */
+/* ===== S21 ===== */
 .photo-s21-staff .photo-cover{
   transform:scale(var(--s21-photo-scale));
   transform-origin:center center;
@@ -718,7 +677,7 @@ section.sbrk{
   object-position:var(--s21-photo-position);
 }
 
-/* Animation */
+/* ===== Animation ===== */
 @media(prefers-reduced-motion:no-preference){
   section[data-deck-active] .sb>*{animation:fu .35s ease both}
   section[data-deck-active] .sb>*:nth-child(1){animation-delay:.05s}
