@@ -672,4 +672,14 @@
 
 
 
+<script>
+(function () {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('s21') === 'photo') {
+    const img = document.querySelector('.photo-s21-staff .photo-cover');
+    if (img) img.src = 'assets/images/s21-staff-photo.png';
+  }
+})();
+</script>
+
 </body></html>
